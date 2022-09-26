@@ -1,0 +1,4 @@
+# ninja log v5
+2	217	1664208978794381551	build.ninja	5a9afdcda394f8ee
+0	319	1664208941969641461	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/polynomial_singly_linked_list/refact1/main.c.o	cfb68fd39c183cdc
+319	414	1664208942066288763	sem3_c	2b43d51aed7045e4

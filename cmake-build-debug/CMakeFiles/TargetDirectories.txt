@@ -1,0 +1,3 @@
+/Users/adityaved/prj_ws/git_hub_repos/sem3_c/cmake-build-debug/CMakeFiles/sem3_c.dir
+/Users/adityaved/prj_ws/git_hub_repos/sem3_c/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/adityaved/prj_ws/git_hub_repos/sem3_c/cmake-build-debug/CMakeFiles/rebuild_cache.dir

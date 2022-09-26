@@ -1,0 +1,4 @@
+"/Users/adityaved/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.25/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/adityaved/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.25/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja -S /Users/adityaved/prj_ws/git_hub_repos/sem3_c -B /Users/adityaved/prj_ws/git_hub_repos/sem3_c/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/adityaved/prj_ws/git_hub_repos/sem3_c/cmake-build-debug

@@ -1,0 +1,8 @@
+1st case :
+keep on adding nodes to the linked list infinitely and check memory consumption of system
+
+2nd case : 
+add 100 nodes to the linked list and then remove one node and add other node in place of the removed node but dont free the memory that was occupied by the node that is removed
+
+3rd case :
+do the same as in 2nd case but now free the memory 
