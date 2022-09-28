@@ -178,6 +178,7 @@ void add_node_at_end_of_ll(double coeff, int pow, struct Node ** ptr_to_ptr_to_p
 void display_ll(struct Node * head)
 {
     // this function is used to display the linked list
+    // here head is a temporary pointer which is storing the pointer to the 1st node of the linked list at the start of this algorithm
     while (head!=NULL)
     {
         printf("coefficient : %lf\n",head->coefficient);
@@ -209,7 +210,7 @@ struct Node * add_and_print_two_polynomials(struct Node * polynomial1, struct No
         // if polynomial2 has exhausted and only polynomial1 is left
         else if(polynomial2 == NULL)
         {
-            add_node_at_end_of_ll(polynomial1->coefficient,polynomial2->power,&ptr_previous);
+            add_node_at_end_of_ll(polynomial1->coefficient,polynomial1->power,&ptr_previous);
             polynomial1=polynomial1->ptr_next;
         }
 
@@ -298,7 +299,7 @@ struct Node * subtract_and_print_two_polynomials(struct Node * polynomial1, stru
 
         else if(polynomial2 == NULL)
         {
-            add_node_at_end_of_ll(polynomial1->coefficient,polynomial2->power,&ptr_previous);
+            add_node_at_end_of_ll(polynomial1->coefficient,polynomial1->power,&ptr_previous);
             polynomial1=polynomial1->ptr_next;
         }
 
@@ -452,5 +453,83 @@ void search_in_multiply_ll_and_add_value_into_multiply_ll(double coeff, int powe
     }
 
     ptr_to_required_node->coefficient = ptr_to_required_node->coefficient + coeff;
+
+}
+
+struct Node * search(struct Node * head_temporary , int power_search)
+{
+    while(head_temporary != NULL)
+    {
+        if(head_temporary->power == power_search)
+        {
+            return head_temporary;
+        }
+
+        head_temporary = head_temporary->ptr_next;
+    }
+
+    return NULL;
+
+}
+
+void delete_element_from_ll(struct Node * head, struct Node * delete_me)
+{
+    // deleting a node which is somewhere in the middle of the linked list
+
+    if(head == NULL)
+    {
+        printf("The linked list is empty / underflow , thus deletion operation is invalid\n");
+        return;
+    }
+
+    struct Node * ptr_iterator = head;
+
+    while (ptr_iterator->ptr_next != delete_me)
+    {
+        ptr_iterator = ptr_iterator->ptr_next;
+    }
+
+    ptr_iterator->ptr_next = ptr_iterator->ptr_next->ptr_next;
+    printf("Deleting the node : \n");
+    free(ptr_iterator->ptr_next);
+
+}
+
+void delete_1st_node_from_ll(struct Node * head)
+{
+    // deleting 1st node of the linked list
+
+    if(head == NULL)
+    {
+        printf("The linked list is empty / underflow , thus deletion operation is invalid\n");
+        return;
+    }
+
+    struct Node * temp = head;
+    head = head->ptr_next;
+    free(temp);
+
+}
+
+void delete_last_node_from_ll(struct Node * head)
+{
+    // deleting last node of the linked list
+
+    if(head == NULL)
+    {
+        printf("The linked list is empty / underflow , thus deletion operation is invalid\n");
+        return;
+    }
+
+    struct Node * ptr_iterator = head;
+
+    while (ptr_iterator->ptr_next->ptr_next != NULL)
+    {
+        ptr_iterator = ptr_iterator->ptr_next;
+    }
+
+    struct Node * temp = ptr_iterator->ptr_next;
+    ptr_iterator->ptr_next = NULL;
+    free(temp);
 
 }
