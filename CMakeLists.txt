@@ -3,4 +3,4 @@ project(sem3_c C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(sem3_c Semester3_Data_Structures/polynomial_singly_linked_list/refact1/main.c)
+add_executable(sem3_c  OxfordReemaThareja/queues/circular_queues/array_implementation.c)

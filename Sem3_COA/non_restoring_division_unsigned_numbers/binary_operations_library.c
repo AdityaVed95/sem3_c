@@ -22,6 +22,8 @@ void convert_positive_or_negative_binary_number_to_decimal(int *, int *, int );
 int convert_positive_binary_number_to_decimal(int * , int);
 void left_shift(int *, int *, int);
 void display_integer_binary_number_array(int *,int );
+void left_shift_A_and_Q(int *  , int * , int * , int * , int);
+
 
 void convert_positive_decimal_number_to_binary(int decimal_input, int * ptr_to_binary_number,int MAX_BITS_SIZE) // converts +ve nos to binary
 {
@@ -243,4 +245,23 @@ void display_integer_binary_number_array(int *ptr_to_binary_number,int MAX_BITS_
         printf("%d",ptr_to_binary_number[i]);
     }
     printf("\n");
+}
+
+
+void left_shift_A_and_Q(int * ptr_to_A_accumulator , int * ptr_to_left_shifted_A_accumulator, int * ptr_to_Q_dividend, int * ptr_to_left_shifted_Q_dividend , int MAX_BITS_SIZE)
+{
+    // left shift A,Q
+    left_shift(ptr_to_A_accumulator,ptr_to_left_shifted_A_accumulator,MAX_BITS_SIZE);
+    for(int i=0;i<MAX_BITS_SIZE;i++)
+    {
+        ptr_to_A_accumulator[i] = ptr_to_left_shifted_A_accumulator[i];
+    }
+
+    ptr_to_A_accumulator[MAX_BITS_SIZE-1] = ptr_to_Q_dividend[0];
+
+    left_shift(ptr_to_Q_dividend,ptr_to_left_shifted_Q_dividend,MAX_BITS_SIZE);
+    for(int i=0;i<MAX_BITS_SIZE;i++)
+    {
+        ptr_to_Q_dividend[i] = ptr_to_left_shifted_Q_dividend[i];
+    }
 }

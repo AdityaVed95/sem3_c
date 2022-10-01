@@ -7,7 +7,7 @@
 #include "binary_operations_library.c"
 int MAX_BITS_SIZE = 4;
 
-void left_shift_A_and_Q(int *  , int * , int * , int * );
+
 void final_display_quotient_and_remainder(int *  , int * );
 
 int main()
@@ -61,13 +61,13 @@ int main()
 
         if(accumulator[0] == 1)
         {
-            left_shift_A_and_Q(accumulator,left_shifted_accumulator,Q_dividend_binary,left_shifted_Q_dividend);
+            left_shift_A_and_Q(accumulator,left_shifted_accumulator,Q_dividend_binary,left_shifted_Q_dividend,MAX_BITS_SIZE);
             binary_addition(accumulator,M_divisor_binary,accumulator,MAX_BITS_SIZE);
         }
 
         else if (accumulator[0] == 0)
         {
-            left_shift_A_and_Q(accumulator,left_shifted_accumulator,Q_dividend_binary,left_shifted_Q_dividend);
+            left_shift_A_and_Q(accumulator,left_shifted_accumulator,Q_dividend_binary,left_shifted_Q_dividend,MAX_BITS_SIZE);
             binary_subtraction(accumulator,M_divisor_binary,accumulator,MAX_BITS_SIZE);
         }
 
@@ -120,24 +120,6 @@ int main()
 
 }
 
-
-void left_shift_A_and_Q(int * ptr_to_A_accumulator , int * ptr_to_left_shifted_A_accumulator, int * ptr_to_Q_dividend, int * ptr_to_left_shifted_Q_dividend)
-{
-    // left shift A,Q
-    left_shift(ptr_to_A_accumulator,ptr_to_left_shifted_A_accumulator,MAX_BITS_SIZE);
-    for(int i=0;i<MAX_BITS_SIZE;i++)
-    {
-        ptr_to_A_accumulator[i] = ptr_to_left_shifted_A_accumulator[i];
-    }
-
-    ptr_to_A_accumulator[MAX_BITS_SIZE-1] = ptr_to_Q_dividend[0];
-
-    left_shift(ptr_to_Q_dividend,ptr_to_left_shifted_Q_dividend,MAX_BITS_SIZE);
-    for(int i=0;i<MAX_BITS_SIZE;i++)
-    {
-        ptr_to_Q_dividend[i] = ptr_to_left_shifted_Q_dividend[i];
-    }
-}
 
 
 void final_display_quotient_and_remainder(int * ptr_to_A_accumulator , int * ptr_to_Q_dividend)
