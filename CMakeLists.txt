@@ -3,4 +3,4 @@ project(sem3_c C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(sem3_c  OxfordReemaThareja/queues/circular_queues/array_implementation.c)
+add_executable(sem3_c Test_Concepts/insert_left_circular_dequeue.c)
