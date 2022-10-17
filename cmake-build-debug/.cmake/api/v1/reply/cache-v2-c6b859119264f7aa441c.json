@@ -103,7 +103,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/adityaved/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.25/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+			"value" : "/Users/adityaved/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -115,7 +115,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/adityaved/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.25/CLion.app/Contents/bin/cmake/mac/bin/cpack"
+			"value" : "/Users/adityaved/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -127,7 +127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/adityaved/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.25/CLion.app/Contents/bin/cmake/mac/bin/ctest"
+			"value" : "/Users/adityaved/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER",
@@ -475,7 +475,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Users/adityaved/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.25/CLion.app/Contents/bin/ninja/mac/ninja"
+			"value" : "/Users/adityaved/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/ninja/mac/ninja"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -743,7 +743,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/adityaved/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.25/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23"
+			"value" : "/Users/adityaved/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
