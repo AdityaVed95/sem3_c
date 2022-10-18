@@ -40,13 +40,12 @@ int main()
 void single_precision_calculate_and_print(int integer_part, float fractional_part, float original_number)
 {
 
-
     // note :
     // in case of negative numbers :
     // these inputs are -ve :
     // int integer_part, float fractional_part, float original_number
 
-    printf("For the 32 single precision : short real format : \n");
+    printf("\nFor the 32 bit single precision : short real format : \n\n");
     int sign_bit;
     int exponent;
 
@@ -59,9 +58,6 @@ void single_precision_calculate_and_print(int integer_part, float fractional_par
         sign_bit = 1;
     }
 
-    printf("\n%d\n",number_of_bits_for_integer_part_single_precision);
-    printf("\n%d\n",number_of_bits_for_fractional_part_single_precision);
-    fflush(stdout);
 
     int binary_of_integer_part [number_of_bits_for_integer_part_single_precision] ;
     int binary_of_fractional_part [number_of_bits_for_fractional_part_single_precision];
@@ -80,21 +76,16 @@ void single_precision_calculate_and_print(int integer_part, float fractional_par
 
 
     printf("The Number in binary format is : ");
-    if(original_number>=0)
-    {
-        display_integer_binary_number_array(binary_of_integer_part,number_of_bits_for_integer_part_single_precision);
-        printf(".");
-        display_integer_binary_number_array(binary_of_fractional_part,number_of_bits_for_fractional_part_single_precision);
 
-    }
-
-    else
+    if(original_number<0)
     {
         printf("-");
-        display_integer_binary_number_array(binary_of_integer_part,number_of_bits_for_integer_part_single_precision);
-        printf(".");
-        display_integer_binary_number_array(binary_of_fractional_part,number_of_bits_for_fractional_part_single_precision);
     }
+
+    display_integer_binary_number_array(binary_of_integer_part,number_of_bits_for_integer_part_single_precision);
+    printf(".");
+    display_integer_binary_number_array(binary_of_fractional_part,number_of_bits_for_fractional_part_single_precision);
+
 
 
     int i;
@@ -139,15 +130,155 @@ void single_precision_calculate_and_print(int integer_part, float fractional_par
 
     printf("\nNormalised form is : ");
 
+    if(original_number<0)
+    {
+        printf("-");
+    }
+
     display_integer_binary_number_array(binary_part1,part1_size);
     printf(".");
     display_integer_binary_number_array(binary_part2,part2_size);
-    printf("  X  2^%d",exponent);
+    printf("  X  2^%d\n",exponent);
+
+    int biased_exponent = exponent + 127;
+
+    int binary_biased_exponent [8];
+    convert_positive_decimal_number_to_binary(biased_exponent,binary_biased_exponent,8);
+
+
+    printf("The True Exponent for this number = %d \n",exponent);
+    printf("The biased exponent for this number = %d\n\n",biased_exponent);
+
+
+    printf("The Sign-Exponent-Mantissa Table for this number in 32 bit format is:\n");
+    printf("%d-",sign_bit);
+    display_integer_binary_number_array(binary_biased_exponent,8);
+    printf("-");
+    display_integer_binary_number_array(binary_part2,part2_size);
+    printf("\n");
 
 }
 
 
 void double_precision_calculate_and_print(int integer_part, float fractional_part, float original_number)
 {
+
+
+    // note :
+    // in case of negative numbers :
+    // these inputs are -ve :
+    // int integer_part, float fractional_part, float original_number
+
+    printf("\nFor the 64 bit double precision : long real format : \n\n");
+    int sign_bit;
+    int exponent;
+
+    if(original_number>=0)
+    {
+        sign_bit = 0;
+    }
+    else
+    {
+        sign_bit = 1;
+    }
+
+
+    int binary_of_integer_part [number_of_bits_for_integer_part_double_precision] ;
+    int binary_of_fractional_part [number_of_bits_for_fractional_part_double_precision];
+
+    if(original_number>=0)
+    {
+        convert_positive_decimal_number_to_binary(integer_part,binary_of_integer_part,number_of_bits_for_integer_part_double_precision);
+        converting_fractional_part_to_binary(fractional_part,binary_of_fractional_part,number_of_bits_for_fractional_part_double_precision);
+    }
+
+    else
+    {
+        convert_positive_decimal_number_to_binary(-integer_part,binary_of_integer_part,number_of_bits_for_integer_part_double_precision);
+        converting_fractional_part_to_binary(-fractional_part,binary_of_fractional_part,number_of_bits_for_fractional_part_double_precision);
+    }
+
+
+    printf("The Number in binary format is : ");
+
+    if(original_number<0)
+    {
+        printf("-");
+    }
+
+    display_integer_binary_number_array(binary_of_integer_part,number_of_bits_for_integer_part_double_precision);
+    printf(".");
+    display_integer_binary_number_array(binary_of_fractional_part,number_of_bits_for_fractional_part_double_precision);
+
+
+
+    int i;
+    int pos;
+    for(i=0;i<number_of_bits_for_integer_part_double_precision;i++)
+    {
+        if(binary_of_integer_part[i] == 1)
+        {
+            pos = i;
+            break;
+        }
+    }
+
+    exponent = number_of_bits_for_integer_part_double_precision-pos-1;
+
+
+    int part1_size = pos+1;
+    int part2_size = number_of_bits_for_integer_part_double_precision + number_of_bits_for_fractional_part_double_precision - pos - 1;
+
+
+    int binary_part1[part1_size];
+    int binary_part2[part2_size];
+    // achieving part1.part2 in binary form
+
+
+    for(i=0;i<=pos;i++)
+    {
+        binary_part1[i]=binary_of_integer_part[i];
+    }
+
+    int k=0;
+    for(i=pos+1;i<number_of_bits_for_integer_part_double_precision;i++)
+    {
+        binary_part2[k] = binary_of_integer_part[i];
+        k++;
+    }
+    for(i=0;i<number_of_bits_for_fractional_part_double_precision;i++)
+    {
+        binary_part2[k] = binary_of_fractional_part[i];
+        k++;
+    }
+
+    printf("\nNormalised form is : ");
+
+    if(original_number<0)
+    {
+        printf("-");
+    }
+
+    display_integer_binary_number_array(binary_part1,part1_size);
+    printf(".");
+    display_integer_binary_number_array(binary_part2,part2_size);
+    printf("  X  2^%d\n",exponent);
+
+    int biased_exponent = exponent + 1023;
+
+    int binary_biased_exponent [11];
+    convert_positive_decimal_number_to_binary(biased_exponent,binary_biased_exponent,11);
+
+
+    printf("The True Exponent for this number = %d \n",exponent);
+    printf("The biased exponent for this number = %d\n\n",biased_exponent);
+
+
+    printf("The Sign-Exponent-Mantissa Table for this number in 64 bit format is:\n");
+    printf("%d-",sign_bit);
+    display_integer_binary_number_array(binary_biased_exponent,11);
+    printf("-");
+    display_integer_binary_number_array(binary_part2,part2_size);
+    printf("\n");
 
 }

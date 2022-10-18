@@ -28,24 +28,26 @@ float given_fraction_part_of_number(float original_num);
 void convert_positive_decimal_number_to_binary(int decimal_input, int * ptr_to_binary_number,int MAX_BITS_SIZE) // converts +ve nos to binary
 {
 
-    int quotient=10,remainder; // 10 is just taken as a random number
-    int copy_of_decimal_input= decimal_input;
-    int i=MAX_BITS_SIZE-1;
+    int quotient = 10, remainder; // 10 is just taken as a random number
+    int copy_of_decimal_input = decimal_input;
+    int i = MAX_BITS_SIZE - 1;
 
     while (quotient != 0)
     {
-        quotient=copy_of_decimal_input/2;
-        remainder = copy_of_decimal_input%2;
-        *(ptr_to_binary_number+i) = remainder;
+        quotient = copy_of_decimal_input / 2;
+        remainder = copy_of_decimal_input % 2;
+        *(ptr_to_binary_number + i) = remainder;
         copy_of_decimal_input = quotient;
         i--;
     }
+
     int k;
-    for(k=i;k>=0;k--)
+    for (k = i; k >= 0; k--)
     {
-        *(ptr_to_binary_number+k) = 0;
+        *(ptr_to_binary_number + k) = 0;
     }
-    }
+}
+
 
 
 
