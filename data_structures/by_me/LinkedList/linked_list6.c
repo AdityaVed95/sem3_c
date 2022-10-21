@@ -353,6 +353,12 @@ int main()
             break;
         }
 
+        if(choice_input != 1)
+        {
+            printf("Invalid input , please try again.\n");
+            continue;
+        }
+
         printf("Enter the data (int) to be added to the %d th node\n",(i));
         fflush(stdout);
         scanf("%d",&data_input);
@@ -413,14 +419,52 @@ int main()
     // we will only use linked list pointer as a rule of thumb
     int number_of_nodes = i-1;
     printf("Number of nodes are : %d\n",number_of_nodes);
-    traverse_linked_list(linked_list_ptr);
 
-    number_of_nodes = delete_given_element(linked_list_ptr,number_of_nodes);
-    traverse_linked_list(linked_list_ptr);
-    delete_given_node(linked_list_ptr,number_of_nodes);
-    traverse_linked_list(linked_list_ptr);
-    insert_node(linked_list_ptr,number_of_nodes);
-    traverse_linked_list(linked_list_ptr);
+
+    while(dummy == 1)
+    {
+        printf("Enter 1 to insert a node\n");
+        printf("Enter 2 to delete a given node\n");
+        printf("Enter 3 to display the elements of the linked list\n");
+        printf("Enter 4 to Exit the program \n");
+        int response;
+        scanf("%d",&response);
+        fflush(stdin);
+
+        if(response == 1)
+        {
+            insert_node(ptr_to_1st_node,number_of_nodes);
+        }
+        else if (response == 2)
+        {
+            delete_given_node(ptr_to_1st_node,number_of_nodes);
+        }
+
+        else if(response ==3)
+        {
+            traverse_linked_list(ptr_to_1st_node);
+        }
+
+        else if (response == 4)
+        {
+            break;
+        }
+
+        else
+        {
+            printf("Invalid input, please try again.\n");
+        }
+
+    }
+
+//    traverse_linked_list(linked_list_ptr);
+//
+//    number_of_nodes = delete_given_element(linked_list_ptr,number_of_nodes);
+//    traverse_linked_list(linked_list_ptr);
+//    delete_given_node(linked_list_ptr,number_of_nodes);
+//    traverse_linked_list(linked_list_ptr);
+//    insert_node(linked_list_ptr,number_of_nodes);
+//    traverse_linked_list(linked_list_ptr);
 
     printf("\n");
     return 0;
