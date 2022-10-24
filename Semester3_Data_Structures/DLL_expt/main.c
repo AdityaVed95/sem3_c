@@ -183,6 +183,7 @@ struct Node * delete_given_node(struct Node * start, int position , int * ptr_to
             struct Node *temp = start;
             free(temp);
             start = NULL;
+            *(ptr_to_number_of_nodes) -= 1;
             return start;
         }
         else
@@ -197,17 +198,17 @@ struct Node * delete_given_node(struct Node * start, int position , int * ptr_to
     {
         if(position == 1)
         {
-            start = delete_at_start(start);
+            start = delete_at_start(start,ptr_to_number_of_nodes);
             return start;
         }
 
         if(position == *(ptr_to_number_of_nodes))
         {
-            start = delete_at_last(start);
+            start = delete_at_last(start,ptr_to_number_of_nodes);
             return start;
         }
 
-        delete_in_between(start,position);
+        delete_in_between(start,position,ptr_to_number_of_nodes);
         return start;
 
     }
