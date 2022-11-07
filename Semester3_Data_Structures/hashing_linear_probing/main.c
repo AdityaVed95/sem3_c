@@ -5,9 +5,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// assuming initially that the hash table is empty and all elements are initialised to 0
-// assuming input of zero is not allowed in the hash table.
-// if the value of an element in the hash table is zero then that place is considered to be empty .
+// assuming initially that the hashing table is empty and all elements are initialised to 0
+// assuming input of zero is not allowed in the hashing table.
+// if the value of an element in the hashing table is zero then that place is considered to be empty .
 
 
 
@@ -22,12 +22,15 @@ int searching_in_hashing_table(int element_to_be_searched , int number_of_elemen
 
 int main()
 {
-    int number_of_elements = 7;
+    int number_of_elements;
+    printf("Enter the size of the hashing table : \n");
+    scanf("%d",&number_of_elements);
+    fflush(stdin);
 
-    // creating hash table
+    // creating hashing table
     int hashing_table[number_of_elements];
 
-    // initialising hash table
+    // initialising hashing table
     for(int i = 0 ; i<number_of_elements; i++)
     {
         hashing_table[i] = 0;
@@ -72,7 +75,7 @@ int main()
 
     while(dummy == 1)
     {
-        printf("Enter 1 to search the occurrence of given element in the hash table\n");
+        printf("Enter 1 to search the occurrence of given element in the hashing table\n");
         printf("Enter 2 to exit\n");
         int response;
         scanf("%d",&response);
@@ -118,13 +121,13 @@ int main()
 int insert_data_in_hashing_table(int data, int number_of_elements, int * ptr_to_hashing_table)
 {
     // returns 1 if data got inserted
-    // returns 0 if hash table was full and data cannot be inserted
+    // returns 0 if hashing table was full and data cannot be inserted
 
     int index = hash_function(data,number_of_elements);
 
     if(ptr_to_hashing_table[index] == 0) // collision did not occur
     {
-        printf("No collision occurred, inserted %d at %dth index of the hash table\n",data,index);
+        printf("No collision occurred, inserted %d at %dth index of the hashing table\n",data,index);
         ptr_to_hashing_table[index] = data;
         display_hashing_table(number_of_elements, ptr_to_hashing_table);
         return 1;
@@ -148,19 +151,19 @@ int hash_function(int data,int number_of_elements)
 
 int handle_collision_and_display_hashing_table(int data , int number_of_elements , int * ptr_to_hashing_table, int index)
 {
-    // returns 0 if hash table is full
+    // returns 0 if hashing table is full
     // returns 1 if element got inserted at a position
     int ans = is_hashing_table_full(ptr_to_hashing_table, number_of_elements);
 
-    if(ans == 1) // if hash table is full
+    if(ans == 1) // if hashing table is full
     {
-        printf("Sorry the hash table is full\n");
-        printf("Exiting the insertion of elements in the hash table\n");
+        printf("Sorry the hashing table is full\n");
+        printf("Exiting the insertion of elements in the hashing table\n");
         display_hashing_table(number_of_elements, ptr_to_hashing_table);
         return 0;
     }
 
-    // hash table is not full and collision has occurred
+    // hashing table is not full and collision has occurred
     printf("Collision has occurred !!!\n");
     search_empty_place_after_collision_and_insert_in_hashing_table(data, number_of_elements, ptr_to_hashing_table, index);
     display_hashing_table(number_of_elements, ptr_to_hashing_table);
@@ -170,8 +173,8 @@ int handle_collision_and_display_hashing_table(int data , int number_of_elements
 
 int is_hashing_table_full(int * ptr_to_hashing_table , int number_of_elements)
 {
-    // returns 0 if hash table is not full
-    // returns 1 if hash table is full
+    // returns 0 if hashing table is not full
+    // returns 1 if hashing table is full
 
     for (int i = 0; i < number_of_elements; i++)
     {
@@ -210,7 +213,7 @@ void search_empty_place_after_collision_and_insert_in_hashing_table(int data , i
 
         if(ptr_to_hashing_table[index] == 0) // we got an empty space where we can store the data
         {
-            printf("Inserted %d at %dth index of the hash table \n",data,index);
+            printf("Inserted %d at %dth index of the hashing table \n",data,index);
             ptr_to_hashing_table[index] = data;
             break;
         }
@@ -237,7 +240,7 @@ void search_empty_place_after_collision_and_insert_in_hashing_table(int data , i
 
 void display_hashing_table(int number_of_elements , int * ptr_to_hashing_table )
 {
-    printf("The current status of Hash Table is :\n");
+    printf("The current status of Hashing Table is :\n");
     printf("{");
     for(int i = 0;i<number_of_elements;i++)
     {
@@ -256,7 +259,7 @@ void display_hashing_table(int number_of_elements , int * ptr_to_hashing_table )
 
 int searching_in_hashing_table(int element_to_be_searched , int number_of_elements , int * ptr_to_hashing_table)
 {
-    // returns -1 if element not found in the hash table
+    // returns -1 if element not found in the hashing table
     // returns the zero based index position of the element in the hashing table.
 
 

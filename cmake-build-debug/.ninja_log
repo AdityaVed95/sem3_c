@@ -1,8 +1,12 @@
 # ninja log v5
 0	106	1666021069800975922	CMakeFiles/sem3_c.dir/Sem3_COA/IEEE_754_floating_point_formats/test1.c.o	a80c37523bca10ea
 0	842	1666967891656141624	CMakeFiles/sem3_c.dir/Sem3_COA/IEEE_754_floating_point_formats/main.c.o	ef25a277fe697040
-479	586	1666976480680856218	sem3_c	4f72937513c3d3b1
+968	1131	1667570343898714398	sem3_c	4f72937513c3d3b1
 3	267	1666445343212355315	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/DLL_expt/main.c.o	bed26d51b993d294
 1	87	1666254394693545306	CMakeFiles/sem3_c.dir/data_structures/by_me/LinkedList/linked_list6.c.o	402b328d122e4a6c
-0	186	1667466228702035768	build.ninja	5a9afdcda394f8ee
-0	479	1666976480566277545	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/hashing_linear_probing/main.c.o	c2277cccad466b65
+0	186	1667808079124840941	build.ninja	5a9afdcda394f8ee
+1	968	1667570343722509499	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/hashing_linear_probing/main.c.o	c2277cccad466b65
+1	1106	1667812231724723987	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/queues_application_josephus/main.c.o	9b221b5f5d32e898
+1108	1312	1667812231941521939	sem3_c	e74560cad43eee1f
+1	192	1667812443725225622	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/queues_application_josephus/main.c.o	9b221b5f5d32e898
+192	301	1667812443835309986	sem3_c	e74560cad43eee1f
