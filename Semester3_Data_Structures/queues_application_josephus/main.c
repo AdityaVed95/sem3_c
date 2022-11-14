@@ -99,7 +99,8 @@ int main()
 
     }
 
-    printf("winner is : %d\n",ptr_before->id);
+    printf("Winner of the Josephus Game is the player with ID : %d\n",ptr_before->id);
+
 
 
     printf("\n");

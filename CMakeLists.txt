@@ -3,4 +3,4 @@ project(sem3_c C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(sem3_c    Semester3_Data_Structures/queues_application_josephus/main.c)
+add_executable(sem3_c   Sem3_COA/FIFO/fifo_main.c)
