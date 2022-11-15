@@ -1,16 +1,19 @@
 # ninja log v5
 0	106	1666021069800975922	CMakeFiles/sem3_c.dir/Sem3_COA/IEEE_754_floating_point_formats/test1.c.o	a80c37523bca10ea
 2	196	1668073229985736169	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/binary_search_tree/bst_main.c.o	a6cf9364658603f6
-196	338	1668073230134568719	sem3_c	662c60fadbf3625c
+160	240	1668419047066322850	sem3_c	e99ceecd3327deb3
 3	267	1666445343212355315	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/DLL_expt/main.c.o	bed26d51b993d294
 0	842	1666967891656141624	CMakeFiles/sem3_c.dir/Sem3_COA/IEEE_754_floating_point_formats/main.c.o	ef25a277fe697040
 1	2076	1668003885407696189	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/queues_application_josephus/main.c.o	9b221b5f5d32e898
+0	186	1668536293004817676	build.ninja	5a9afdcda394f8ee
 1	87	1666254394693545306	CMakeFiles/sem3_c.dir/data_structures/by_me/LinkedList/linked_list6.c.o	402b328d122e4a6c
-0	186	1668414958823638546	build.ninja	5a9afdcda394f8ee
 1	968	1667570343722509499	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/hashing_linear_probing/main.c.o	c2277cccad466b65
-0	640	1668418394063548083	CMakeFiles/sem3_c.dir/Sem3_COA/FIFO/fifo_main.c.o	9c4a663a1b937917
-641	1186	1668418394612365444	sem3_c	e99ceecd3327deb3
-1	184	1668418758731057894	CMakeFiles/sem3_c.dir/Sem3_COA/FIFO/fifo_main.c.o	9c4a663a1b937917
-184	269	1668418758816403752	sem3_c	e99ceecd3327deb3
 3	160	1668419046985526377	CMakeFiles/sem3_c.dir/Sem3_COA/FIFO/fifo_main.c.o	9c4a663a1b937917
-160	240	1668419047066322850	sem3_c	e99ceecd3327deb3
+2	1049	1668536296560683551	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/binary_search_tree/bst_main.c.o	a6cf9364658603f6
+1049	1266	1668536296778333842	sem3_c	662c60fadbf3625c
+3	635	1668537069209275104	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/binary_search_tree/bst_main.c.o	a6cf9364658603f6
+635	753	1668537069336641690	sem3_c	662c60fadbf3625c
+1	611	1668538233161523206	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/binary_search_tree/bst_main.c.o	a6cf9364658603f6
+612	739	1668538233293421236	sem3_c	662c60fadbf3625c
+3	173	1668538442037676235	CMakeFiles/sem3_c.dir/Semester3_Data_Structures/binary_search_tree/bst_main.c.o	a6cf9364658603f6
+173	279	1668538442140434957	sem3_c	662c60fadbf3625c
