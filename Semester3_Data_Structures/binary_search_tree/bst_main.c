@@ -19,8 +19,6 @@ void inorder_traversal_bst(struct node * tree);
 void postorder_traversal_bst(struct node * tree);
 void search_element_in_bst(struct node * tree, int data_to_search);
 
-
-
 int main()
 {
 
@@ -29,8 +27,6 @@ int main()
     // all 3 types of traversals of bst
     // search in bst
 
-
-    // deletion is bst
 
     printf("Enter the data of root node of BST : \n");
     int data1;
@@ -156,29 +152,6 @@ struct node * create_bst(int data1)
     start->ptr_left_child = NULL;
     start->ptr_right_child = NULL;
     return start;
-}
-
-void insert_node_in_bst(int data_to_insert , struct node * start)
-{
-    insertion_mechanism(start,data_to_insert);
-
-
-//    struct node * ptr_iterator = start;
-
-//    while(dummy == 1)
-//    {
-//        if(data_to_insert > ptr_iterator->data)
-//        {
-//            ptr_iterator = ptr_iterator->ptr_right_child;
-//        }
-//
-//        else if(data_to_insert < ptr_iterator->data)
-//        {
-//            ptr_iterator = ptr_iterator->ptr_left_child;
-//        }
-//
-//    }
-
 }
 
 void insertion_mechanism(struct node * tree, int data_to_insert)

@@ -37,6 +37,21 @@ int main()
     for(int i=0; i<number_of_elements;i++)
     {
         printf("For element = %d : \n",input_array[i]);
+
+
+
+        // if input_array[i] element is already present in the stack :
+        // if hit has occurred :
+        if(input_array[i] == container[0] || input_array[i] == container[1] || input_array[i] == container[2])
+        {
+            printf("Hit has occurred : the state of the container does not change.\n");
+            show_container(container_size,container);
+
+        }
+
+
+
+
         // if container is not full :
         // then add new element to the container:
         if(is_container_full(container_size,container) == 0)
@@ -53,14 +68,7 @@ int main()
 
 
 
-        // if input_array[i] element is already present in the stack :
-        // if hit has occurred :
-        if(input_array[i] == container[0] || input_array[i] == container[1] || input_array[i] == container[2])
-        {
-            printf("Hit has occurred : the state of the container does not change.\n");
-            show_container(container_size,container);
 
-        }
 
         // if container is full and hit has not occurred : replace the oldest element
         else
