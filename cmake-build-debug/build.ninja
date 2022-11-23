@@ -46,11 +46,11 @@ cmake_ninja_workdir = /Users/adityaved/prj_ws/git_hub_repos/sem3_c/cmake-build-d
 
 build cmake_object_order_depends_target_sem3_c: phony || CMakeFiles/sem3_c.dir
 
-build CMakeFiles/sem3_c.dir/Sem3_COA/cache_mapping_techniques/cache_mapping_main.c.o: C_COMPILER__sem3_c_Debug /Users/adityaved/prj_ws/git_hub_repos/sem3_c/Sem3_COA/cache_mapping_techniques/cache_mapping_main.c || cmake_object_order_depends_target_sem3_c
-  DEP_FILE = CMakeFiles/sem3_c.dir/Sem3_COA/cache_mapping_techniques/cache_mapping_main.c.o.d
+build CMakeFiles/sem3_c.dir/Semester3_Data_Structures/IA/main.c.o: C_COMPILER__sem3_c_Debug /Users/adityaved/prj_ws/git_hub_repos/sem3_c/Semester3_Data_Structures/IA/main.c || cmake_object_order_depends_target_sem3_c
+  DEP_FILE = CMakeFiles/sem3_c.dir/Semester3_Data_Structures/IA/main.c.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=gnu99
   OBJECT_DIR = CMakeFiles/sem3_c.dir
-  OBJECT_FILE_DIR = CMakeFiles/sem3_c.dir/Sem3_COA/cache_mapping_techniques
+  OBJECT_FILE_DIR = CMakeFiles/sem3_c.dir/Semester3_Data_Structures/IA
 
 
 # =============================================================================
@@ -60,7 +60,7 @@ build CMakeFiles/sem3_c.dir/Sem3_COA/cache_mapping_techniques/cache_mapping_main
 #############################################
 # Link the executable sem3_c
 
-build sem3_c: C_EXECUTABLE_LINKER__sem3_c_Debug CMakeFiles/sem3_c.dir/Sem3_COA/cache_mapping_techniques/cache_mapping_main.c.o
+build sem3_c: C_EXECUTABLE_LINKER__sem3_c_Debug CMakeFiles/sem3_c.dir/Semester3_Data_Structures/IA/main.c.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15
   OBJECT_DIR = CMakeFiles/sem3_c.dir
   POST_BUILD = :
