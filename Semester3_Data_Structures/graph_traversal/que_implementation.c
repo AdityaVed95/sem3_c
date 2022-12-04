@@ -1,30 +1,14 @@
 //
-// Created by Aditya Ved on 01/10/22.
+// Created by Aditya Ved on 03/12/22.
 //
+
 
 #include <stdio.h>
 #include <stdlib.h>
 void delete(int * ptr_to_queue , int * ptr_to_front ,int * ptr_to_rear );
 void insert(int * ptr_to_queue , int * ptr_to_front , int * ptr_to_rear , int MAX , int element_to_be_inserted);
 void display(int * ptr_to_queue, int * ptr_to_front ,  int * ptr_to_rear);
-
-int main()
-{
-    // array implementation of simple queue
-    int front=-1,rear=-1;
-    int max = 10;
-    int queue1 [max];
-    insert(queue1,&front,&rear,max,15);
-    insert(queue1,&front,&rear,max,25);
-    insert(queue1,&front,&rear,max,35);
-    insert(queue1,&front,&rear,max,45);
-    display(queue1,&front,&rear);
-    delete(queue1,&front,&rear);
-    display(queue1,&front,&rear);
-
-    printf("\n");
-    return 0;
-}
+int is_que_empty(int * ptr_to_front ,  int * ptr_to_rear);
 
 void insert(int * ptr_to_queue , int * ptr_to_front , int * ptr_to_rear , int MAX , int element_to_be_inserted)
 {
@@ -48,6 +32,7 @@ void insert(int * ptr_to_queue , int * ptr_to_front , int * ptr_to_rear , int MA
 
     ptr_to_queue[*(ptr_to_rear)] = element_to_be_inserted;
 
+
 }
 
 void delete(int * ptr_to_queue , int * ptr_to_front ,int * ptr_to_rear)
@@ -61,7 +46,7 @@ void delete(int * ptr_to_queue , int * ptr_to_front ,int * ptr_to_rear)
     }
 
     element_to_be_deleted = ptr_to_queue[*(ptr_to_front)];
-    printf("Deleting this element : %d\n",element_to_be_deleted);
+    printf("Dequeueing this vertex : %d\n",element_to_be_deleted);
     ptr_to_queue[*(ptr_to_front)] = 0;
 
     if(*(ptr_to_front) == *(ptr_to_rear))
@@ -86,7 +71,26 @@ void display(int * ptr_to_queue, int * ptr_to_front ,  int * ptr_to_rear)
 
     for(int  i = *(ptr_to_front) ; i <= *(ptr_to_rear) ; i++)
     {
-        printf("%d ,\t",ptr_to_queue[i]);
+        if(i == *(ptr_to_rear))
+        {
+            printf("%d",ptr_to_queue[i]);
+        }
+        else
+        {
+            printf("%d \t,\t",ptr_to_queue[i]);
+        }
+
     }
     printf("\n");
+}
+
+
+int is_que_empty(int * ptr_to_front ,  int * ptr_to_rear)
+{
+    if(*(ptr_to_front) == -1 && *(ptr_to_rear) == -1)
+    {
+        return 1;
+    }
+
+    return 0;
 }

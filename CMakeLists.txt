@@ -3,4 +3,4 @@ project(sem3_c C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(sem3_c Semester3_Data_Structures/IA/main.c)
+add_executable(sem3_c   Semester3_Data_Structures/graph_traversal/main_graph_traverser.c)
