@@ -3,4 +3,4 @@ project(sem3_c C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(sem3_c  Semester3_Data_Structures/sorting_algorithms/counting_sort.c)
+add_executable(sem3_c    Semester3_Data_Structures/enums/threaded_binary_tree.c)
